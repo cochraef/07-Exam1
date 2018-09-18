@@ -476,16 +476,16 @@ def problem1c(m):
            and 11 + 13 + 17 + 19 = 60.
      """
     ############################################################################
-    # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
+    # 4: DONE Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
     ############################################################################
-    # TODO (continued): IMPORTANT NOTE:
-    # TODO (continued):   This problem is 1 point (of 100) on the exam.
-    # TODO (continued)    Do not spend more than a few minutes on it.
-    # TODO (continued)    You get   NO credit   if your solution is more
-    # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
+    # DONE (continued): IMPORTANT NOTE:
+    # DONE (continued):   This problem is 1 point (of 100) on the exam.
+    # DONE (continued)    Do not spend more than a few minutes on it.
+    # DONE (continued)    You get   NO credit   if your solution is more
+    # DONE (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
-    value = 0
+    value = 0  # I couldn't get it in 3 lines :(
     for k in range(9):
         if number_of_factors(m + k + 1) == 2: value = value + (m + k + 1)
     return value
