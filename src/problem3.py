@@ -88,20 +88,41 @@ def problem3(point, length, delta, window):
       :type window:  rg.RoseWindow
     """
     # --------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
-    # TODO (continued):  IMPORTANT: Use this ITERATIVE ENHANCEMENT PLAN:
-    # TODO (continued):    1. Make the sole VERTICAL line appear,
-    # TODO (continued):         with thickness 3.
-    # TODO (continued):    2. Make the FIRST horizontal line appear.
-    # TODO (continued):    3. Make MORE horizontal lines appear,
-    # TODO (continued):         each delta below the previous one.
-    # TODO (continued):    4. Make each successive horizontal line
-    # TODO (continued):         20 pixels longer than the previous one.
-    # TODO (continued):    5. Make the right NUMBER of horizontal lines.
-    # TODO (continued):    6. Make the horizontal lines each have thickness 3
-    # TODO (continued):         and colors per the specified pattern.
+    # 2: DONE Implement and test this function.
+    # DONE (continued):  IMPORTANT: Use this ITERATIVE ENHANCEMENT PLAN:
+    # DONE (continued):    1. Make the sole VERTICAL line appear,
+    # DONE (continued):         with thickness 3.
+    # DONE (continued):    2. Make the FIRST horizontal line appear.
+    # DONE (continued):    3. Make MORE horizontal lines appear,
+    # DONE (continued):         each delta below the previous one.
+    # DONE (continued):    4. Make each successive horizontal line
+    # DONE (continued):         20 pixels longer than the previous one.
+    # DONE (continued):    5. Make the right NUMBER of horizontal lines.
+    # DONE (continued):    6. Make the horizontal lines each have thickness 3
+    # DONE (continued):         and colors per the specified pattern.
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
+    point1 = point
+    point2 = rg.Point(point.x, point.y + length)
+    ver_line = rg.Line(point1, point2)
+    ver_line.thickness = 3
+    ver_line.color = 'black'
+    ver_line.attach_to(window)
+
+    for k in range(length // delta + 1):
+        point1 = rg.Point(point.x, point.y + delta * k)
+        point2 = rg.Point(point.x + length + 20 * k, point1.y)
+        line = rg.Line(point1, point2)
+        line.thickness = 3
+        if k % 3 == 0:
+            line.color = 'magenta'
+        if k % 3 == 1:
+            line.color = 'cyan'
+        if k % 3 == 2:
+            line.color = 'spring green'
+        line.attach_to(window)
+
+    window.render()
 
 
 # ----------------------------------------------------------------------
